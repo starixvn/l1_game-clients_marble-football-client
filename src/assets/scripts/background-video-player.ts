@@ -1,4 +1,4 @@
-import { _decorator, Component } from "cc";
+import { _decorator, Component, log } from "cc";
 import Hls from "hls.js";
 import { DOMBackgroundVideo } from "./dom-background-video";
 
@@ -52,10 +52,9 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     gotUserGesture() {
-        if (this.native) {
-            console.log("video native set muted", this._muted);
-            this.native.muted = this._muted;
-        }
+        this.native.volume = 1;
+        localStorage.setItem("videoMuted", "false");
+        localStorage.setItem("videoVolume", "1");
     }
 
     loadSource() {
@@ -85,6 +84,12 @@ export class BackgroundVideoPlayer extends Component {
 
     set muted(value: boolean) {
         this._muted = value;
+
+        if (this.initialized) {
+            log("video player set muted ", value);
+            this.native.muted = value;
+            localStorage.setItem("videoMuted", value.toString());
+        }
     }
 
     get level() {

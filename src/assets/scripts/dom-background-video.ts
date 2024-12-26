@@ -18,12 +18,14 @@ export class DOMBackgroundVideo {
             const size = container.getBoundingClientRect();
 
             video.id = DOMBackgroundVideo.VIDEO_ID;
-            video.muted = true;
+            const savedMuted = localStorage.getItem("videoMuted") === "false";
+            const savedVolume = localStorage.getItem("videoVolume") || "1";
+
+            video.muted = !savedMuted;
+            video.volume = parseFloat(savedVolume);
 
             DOMBackgroundVideo.applyVideoStyles(video, size);
-
             container.insertBefore(video, container.firstChild);
-
             DOMBackgroundVideo.registerEvents();
 
             return video;
