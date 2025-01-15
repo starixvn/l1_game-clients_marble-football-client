@@ -13,7 +13,7 @@ const { ccclass, property } = _decorator;
 const { Rounds } = gc;
 const { render, handle } = Observer;
 
-type TweenKey = "zoomInOut" | "fadeInOut" | "flyDown" | "flyUp";
+type TweenKey = "zoomInOut" | "fadeInOut" | "flyDown" | "flyUp" | "scoreBoardFlyUp";
 
 interface TweenConfig {
     scale?: Vec3;
@@ -70,6 +70,10 @@ export class PlayArea extends ObserverComponent {
         flyUp: {
             in: { positionY: 330, opacity: 255, time: 1 },
             out: { positionY: 830, opacity: 0, time: 1 },
+        },
+        scoreBoardFlyUp: {
+            in: { positionY: 290, opacity: 255, time: 0.75 },
+            out: { positionY: 790, opacity: 1, time: 0.5 },
         },
     };
 
@@ -203,25 +207,25 @@ export class PlayArea extends ObserverComponent {
 
         // At the begin of streaming
         if (time === settings.durations.introVideo) {
-            this.playAnimForTarget(this.scoreBoard, this.tweenConfigs.fadeInOut.out);
+            this.playAnimForTarget(this.scoreBoard, this.tweenConfigs.scoreBoardFlyUp.out);
             this.isScoreBoardOut = true;
         }
 
         // At the begin of placing bet
         if (this.isScoreBoardOut && time === settings.durations.placingBet) {
-            this.playAnimForTarget(this.scoreBoard, this.tweenConfigs.fadeInOut.in);
+            this.playAnimForTarget(this.scoreBoard, this.tweenConfigs.scoreBoardFlyUp.in);
             this.isScoreBoardOut = false;
         }
 
         // before placing bet
         if (!this.isScoreBoardOut && time > settings.durations.placingBet) {
-            this.setStaticTarget(this.scoreBoard, this.tweenConfigs.fadeInOut.out);
+            this.setStaticTarget(this.scoreBoard, this.tweenConfigs.scoreBoardFlyUp.out);
             this.isScoreBoardOut = true;
         }
 
         // during streaming
         if (!this.isScoreBoardOut && time < settings.durations.introVideo) {
-            this.setStaticTarget(this.scoreBoard, this.tweenConfigs.fadeInOut.out);
+            this.setStaticTarget(this.scoreBoard, this.tweenConfigs.scoreBoardFlyUp.out);
             this.isScoreBoardOut = true;
         }
     }
