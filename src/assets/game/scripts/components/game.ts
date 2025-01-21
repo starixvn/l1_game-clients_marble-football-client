@@ -52,9 +52,9 @@ export default class Game extends GameComponent {
     }
 
     onLoad() {
-        this.betResultNode.active = false;
+        this.betResultNode && (this.betResultNode.active = false);
         super.onLoad();
-        this.initBackgroundImage();
+        // this.initBackgroundImage();
     }
 
     @handle(gc.Rounds.RoundRunningHandlers, (handle) => handle.stopRunner())
