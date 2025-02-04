@@ -61,7 +61,7 @@ export class MatchResultHandler {
 
     generateMatchResult(roundResult: RoundResult) {
         const { roundId, result, settlementResult } = roundResult;
-
+        console.log("roundId", roundId);
         if (roundId === this.store.matchResult?.roundId) {
             return;
         }

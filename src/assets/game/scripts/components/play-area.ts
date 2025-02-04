@@ -37,18 +37,6 @@ export class PlayArea extends ObserverComponent {
     private mainPlayAreaTargets: Array<{ target: Node; key: TweenKey }>;
 
     @property(Node)
-    private chipContainer: Node = null;
-
-    @property(Node)
-    private betChoices: Node = null;
-
-    @property(Node)
-    private scoreBoard: Node = null;
-
-    @property(Node)
-    private chips: Node = null;
-
-    @property(Node)
     private teamScore: Node = null;
 
     @property([Node])
@@ -82,11 +70,7 @@ export class PlayArea extends ObserverComponent {
     private readonly ShowWinnerAndTournamentTimeOffset = 1;
 
     onLoad() {
-        this.mainPlayAreaTargets = [
-            { target: this.betChoices, key: "zoomInOut" },
-            { target: this.chipContainer, key: "zoomInOut" },
-            { target: this.chips, key: "flyDown" },
-        ];
+        this.mainPlayAreaTargets = [];
 
         this.disappearingNodes.forEach((node) => {
             this.mainPlayAreaTargets.push({ target: node, key: "fadeInOut" });
@@ -127,9 +111,6 @@ export class PlayArea extends ObserverComponent {
         if (phase.id === this.ShowWinnerAndTournament) {
             if (phase.progress === 0) {
                 const duration = 0.2;
-                this.scheduleOnce(() => this.fadeOutBetchoiceNode(true, duration), this.ShowWinnerAndTournamentTimeOffset - duration);
-            } else {
-                this.fadeOutBetchoiceNode(true, 0);
             }
 
             return;
@@ -152,17 +133,8 @@ export class PlayArea extends ObserverComponent {
         }
         if (phase.id === this.ShowWinnerAndTournament) {
             const duration = 0.2;
-            this.scheduleOnce(() => this.fadeOutBetchoiceNode(false, duration), this.ShowWinnerAndTournamentTimeOffset - duration);
-            return;
-        }
-    }
 
-    fadeOutBetchoiceNode(fadeOut: boolean, duration: number) {
-        const opacity = fadeOut ? 1 : 255;
-        if (duration === 0) {
-            AnimationUtils.setOpacityNode(this.betChoices, opacity);
-        } else {
-            AnimationUtils.fadeTo(this.betChoices, duration, opacity);
+            return;
         }
     }
 
@@ -200,33 +172,9 @@ export class PlayArea extends ObserverComponent {
     }
 
     @render(Rounds.RoundTimeStore, (store) => store.roundTime)
-    async setScoreBoard(time: number) {
-        if (time < 0) {
-            return;
-        }
-
-        // At the begin of streaming
-        if (time === settings.durations.introVideo) {
-            this.playAnimForTarget(this.scoreBoard, this.tweenConfigs.scoreBoardFlyUp.out);
-            this.isScoreBoardOut = true;
-        }
-
-        // At the begin of placing bet
-        if (this.isScoreBoardOut && time === settings.durations.placingBet) {
-            this.playAnimForTarget(this.scoreBoard, this.tweenConfigs.scoreBoardFlyUp.in);
-            this.isScoreBoardOut = false;
-        }
-
-        // before placing bet
-        if (!this.isScoreBoardOut && time > settings.durations.placingBet) {
-            this.setStaticTarget(this.scoreBoard, this.tweenConfigs.scoreBoardFlyUp.out);
-            this.isScoreBoardOut = true;
-        }
-
-        // during streaming
-        if (!this.isScoreBoardOut && time < settings.durations.introVideo) {
-            this.setStaticTarget(this.scoreBoard, this.tweenConfigs.scoreBoardFlyUp.out);
-            this.isScoreBoardOut = true;
+    async hideScore(time: number) {
+        if (time == 151) {
+            this.playAnimForTarget(this.teamScore, this.tweenConfigs.flyUp.out);
         }
     }
 

@@ -22,6 +22,13 @@ export class TournamentStore {
         return this._currentMatch;
     }
 
+    get summary() {
+        return {
+            matchResult: this._currentMatch,
+            isFinal: this._isFinal,
+        };
+    }
+
     get isFinal() {
         return this._isFinal;
     }

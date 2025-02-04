@@ -157,6 +157,10 @@ export default class VideoStreamIntegration extends ObserverComponent {
             this.breakTime?.playAnimation(0);
         }
 
+        if (roundTime < settings.durations.outro) {
+            this.introOutro.playOutroAnimation(0, settings.durations.outro);
+        }
+
         this.introOutro.showGameBackground = roundTime > settings.durations.introVideo || roundTime < 0;
     }
 

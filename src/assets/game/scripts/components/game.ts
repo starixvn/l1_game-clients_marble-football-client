@@ -16,6 +16,7 @@ import { GamePhaseStore } from "../features/game-phase/game-phase-store";
 import { settings } from "../game-settings";
 import { MatchResult } from "./match-result";
 import { NetworkStatus, SystemIndicator } from "./system-indcator";
+import { ConnectHandler } from "../features/connection/connection-handler";
 
 startGame(settings.name, containerOptions, siteConfigs);
 
@@ -54,7 +55,13 @@ export default class Game extends GameComponent {
     onLoad() {
         this.betResultNode.active = false;
         super.onLoad();
-        this.initBackgroundImage();
+        this.connectGameServer();
+        //this.initBackgroundImage();
+    }
+
+    @handle(ConnectHandler)
+    connectGameServer() {
+        console.log("connectGameServer");
     }
 
     @handle(gc.Rounds.RoundRunningHandlers, (handle) => handle.stopRunner())

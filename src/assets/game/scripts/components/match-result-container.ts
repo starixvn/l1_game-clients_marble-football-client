@@ -14,6 +14,9 @@ import { GamePhaseStore } from "../features/game-phase/game-phase-store";
 import { IMatchResult, MatchResultStore } from "../features/match-result/match-result-store";
 import { MiniGame } from "./mini-game";
 import { Winner } from "./winner";
+import { VideoStreamStore } from "../features/video-stream/video-stream-store";
+import { TournamentStore } from "../features/tournament/tournament-store";
+import { MarbleFootballServiceMessages } from "../marble-football-service-messages";
 
 const { ccclass, property } = _decorator;
 const { render, handle } = Observer;
@@ -75,6 +78,20 @@ export class MatchResultContainer extends MultipleNodeContainer {
             miniGame.setScores(this.matchResult.scores);
             miniGame.playStatistic(at);
         }
+    }
+
+    @render(TournamentStore, (store) => store.summary)
+    setMatchResult(summary: { matchResult: MarbleFootballServiceMessages.MatchType; isFinal: boolean }) {
+        if (!summary.matchResult) {
+            return;
+        }
+        const isHomeWin = summary.matchResult.home > summary.matchResult.away;
+        this.matchResult = {
+            ...this.matchResult,
+            winner: isHomeWin ? summary.matchResult.home : summary.matchResult.away,
+            isHomeWin,
+            isFinal: summary.isFinal,
+        };
     }
 
     initForMatchWinner(node: Node, at: number) {

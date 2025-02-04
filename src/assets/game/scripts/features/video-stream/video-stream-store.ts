@@ -3,7 +3,7 @@ import mobx from "mobx";
 import { MarbleFootballServiceMessages } from "../../marble-football-service-messages";
 import { settings } from "./../../game-settings";
 
-const { injectable } = inversify;
+const { injectable, inject } = inversify;
 
 export type StreamingVideo = {
     videoName: string;
