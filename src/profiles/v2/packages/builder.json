@@ -11,8 +11,8 @@
         "progress": 1,
         "state": "success",
         "stage": "build",
-        "message": "12-27-2024 12:48:12 build success in 3 min 30 s!",
-        "detailMessage": "builder:build-project-total (208344ms)\r",
+        "message": "2-4-2025 17:26:20 build success in 41 s!",
+        "detailMessage": "// ---- build task cocos-service：onAfterBuild ----\r",
         "options": {
           "name": "cocos-3x",
           "platform": "web-mobile",
@@ -30,88 +30,12 @@
           "mainBundleCompressionType": "merge_dep",
           "useSplashScreen": false,
           "packAutoAtlas": true,
-          "startScene": "cdeb5c24-9ba8-4cab-a306-8a562fd04b39",
+          "startScene": "1d66fe24-7c49-4def-aad0-8da6fcdc7605",
           "outputName": "web-mobile",
           "scenes": [
             {
               "url": "db://assets/game/game.scene",
               "uuid": "1d66fe24-7c49-4def-aad0-8da6fcdc7605"
-            },
-            {
-              "url": "db://assets/game/scene-test.scene",
-              "uuid": "2872c9d3-63e5-4cce-9554-3f3ad22ebb64"
-            },
-            {
-              "url": "db://assets/game/scene-tournament.scene",
-              "uuid": "87552cea-ac00-48cc-aadf-c89a137ed021"
-            },
-            {
-              "url": "db://assets/game/splash/splash.scene",
-              "uuid": "cdeb5c24-9ba8-4cab-a306-8a562fd04b39"
-            },
-            {
-              "url": "db://shared-components/feature-structure/scene.scene",
-              "uuid": "b97b166d-3dd1-4968-8fa8-488f447e05b0"
-            },
-            {
-              "url": "db://shared-components/session-timeout/session-timeout.scene",
-              "uuid": "1b4ca76d-3ce5-41e6-a47c-0fb1f85bb3f4"
-            },
-            {
-              "url": "db://shared-components/under-maintenance/under-maintenance.scene",
-              "uuid": "3640a00f-a2ed-4aec-b369-779ede63f5df"
-            },
-            {
-              "url": "db://shared-components/game/around-table-player/around-table-player.scene",
-              "uuid": "3a56c048-a4f9-4ea2-90c1-25349467f933"
-            },
-            {
-              "url": "db://shared-components/game/dealer/test-dealer.scene",
-              "uuid": "9cc40753-9dc0-4eec-b735-8bdb3575e3df"
-            },
-            {
-              "url": "db://shared-components/game/domino/domino-test.scene",
-              "uuid": "1521d635-d1be-47bb-ac5d-cacd8addcd50"
-            },
-            {
-              "url": "db://shared-components/game/jackpot-notification/test-jackpot.scene",
-              "uuid": "cfdf06e5-0b32-492a-b52e-5015953ec173"
-            },
-            {
-              "url": "db://shared-components/game/scoreboards/scoreboard.scene",
-              "uuid": "9ec9624e-8ef6-4e81-bf0e-34a4eab4a438"
-            },
-            {
-              "url": "db://shared-components/game-crash/auto-cash-out/demo/demo.scene",
-              "uuid": "39ede48e-f183-4063-90a9-8ae06be0fbdb"
-            },
-            {
-              "url": "db://shared-components/game-crash/bet-input/demo/demo-bet-input.scene",
-              "uuid": "dcfeaa90-469c-49f2-8586-5626f155659b"
-            },
-            {
-              "url": "db://shared-components/game-instant/common-components/notice/notice-instant-test.scene",
-              "uuid": "733bea1f-4a91-4822-906e-7b6c60563dbb"
-            },
-            {
-              "url": "db://shared-components/game-instant/common-components/prompt-message/prompt-message-instant-test.scene",
-              "uuid": "3497b87d-7625-4274-8685-4e5a47b27cf4"
-            },
-            {
-              "url": "db://shared-components/shared/common-components/custom-materials/test-flash-light.scene",
-              "uuid": "9765a2ea-52d3-41b3-ab5a-af4714aeabbf"
-            },
-            {
-              "url": "db://shared-components/shared/common-components/custom-materials/test-gradient-node.scene",
-              "uuid": "0c7bef3a-f145-4930-b6f2-ecb6b560e875"
-            },
-            {
-              "url": "db://shared-components/shared/common-components/custom-materials/test-sprite-perspective.scene",
-              "uuid": "c970bf87-93bf-4691-8426-3296ad058c8b"
-            },
-            {
-              "url": "db://shared-components/shared/common-components/integrations/identifier.scene",
-              "uuid": "8fa0d7ef-6c87-40c2-bd73-c63184ba47ff"
             },
             {
               "url": "db://shared-components/shared/shared-bundle/fonts/test-font.scene",
@@ -169,7 +93,7 @@
           },
           "wasmCompressionMode": false
         },
-        "time": "12-27-2024 12:44:42",
+        "time": "2-4-2025 17:25:38",
         "dirty": false
       }
     }
@@ -182,28 +106,16 @@
     "useSplashScreen": false,
     "skipCompressTexture": false,
     "mainBundleIsRemote": false,
-    "startScene": "cdeb5c24-9ba8-4cab-a306-8a562fd04b39",
+    "startScene": "1d66fe24-7c49-4def-aad0-8da6fcdc7605",
     "scenes": [
       {
         "url": "db://assets/game/game.scene",
-        "uuid": "4229fd91-1ded-407f-b130-7b678b820c27"
-      },
-      {
-        "url": "db://assets/game/splash/splash.scene",
-        "uuid": "cdeb5c24-9ba8-4cab-a306-8a562fd04b39"
+        "uuid": "1d66fe24-7c49-4def-aad0-8da6fcdc7605"
       },
       {
         "url": "db://shared-components/shared/shared-bundle/fonts/test-font.scene",
         "uuid": "ef8d96c0-1d8b-4754-bba7-025d93dbdba1",
         "bundle": "db://shared-components/shared/shared-bundle"
-      },
-      {
-        "url": "db://shared-components/under-maintenance/under-maintenance.scene",
-        "uuid": "3640a00f-a2ed-4aec-b369-779ede63f5df"
-      },
-      {
-        "url": "db://shared-components/session-timeout/session-timeout.scene",
-        "uuid": "1b4ca76d-3ce5-41e6-a47c-0fb1f85bb3f4"
       }
     ],
     "polyfills": {
