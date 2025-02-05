@@ -98,7 +98,7 @@ export default class Game extends GameComponent {
     }
 
     update() {
-        const roundId = this.isPhaseWinner ? this.cacheRoundId - 1 : this.cacheRoundId;
+        const roundId = this.cacheRoundId;
         this.lblRoundId.string = `#${roundId}`;
     }
 
