@@ -85,11 +85,10 @@ export class MatchResultContainer extends MultipleNodeContainer {
         if (!summary.matchResult) {
             return;
         }
-        const isHomeWin = summary.matchResult.home > summary.matchResult.away;
         this.matchResult = {
             ...this.matchResult,
-            winner: isHomeWin ? summary.matchResult.home : summary.matchResult.away,
-            isHomeWin,
+            winner: summary.matchResult.homeWins ? summary.matchResult.home : summary.matchResult.away,
+            isHomeWin: summary.matchResult.homeWins,
             isFinal: summary.isFinal,
         };
     }
