@@ -80,19 +80,6 @@ export class MatchResultContainer extends MultipleNodeContainer {
         }
     }
 
-    @render(TournamentStore, (store) => store.summary)
-    setMatchResult(summary: { matchResult: MarbleFootballServiceMessages.MatchType; isFinal: boolean }) {
-        if (!summary.matchResult) {
-            return;
-        }
-        this.matchResult = {
-            ...this.matchResult,
-            winner: summary.matchResult.homeWins ? summary.matchResult.home : summary.matchResult.away,
-            isHomeWin: summary.matchResult.homeWins,
-            isFinal: summary.isFinal,
-        };
-    }
-
     initForMatchWinner(node: Node, at: number) {
         const winnerComp = node.getComponent(Winner);
         const winner = this.matchResult.winner;

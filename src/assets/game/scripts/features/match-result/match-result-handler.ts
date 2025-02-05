@@ -120,4 +120,37 @@ export class MatchResultHandler {
 
         return [...halftimeScores, finalScore];
     }
+
+    handleMatchResult(matchResult: MarbleFootballServiceMessages.Result) {
+        if (Object.keys(matchResult).length === 0) {
+            return;
+        }
+
+        const miniGame = matchResult.homeWinsOnDraw !== undefined;
+        const scores = this.parseMatchScore(matchResult);
+        const finalScore = scores[scores.length - 1];
+        const [homeScore, awayScore] = finalScore;
+        const penalty = matchResult.penalty;
+        const isHomeWin = homeScore === awayScore ? penalty?.home > penalty?.away : homeScore > awayScore;
+        const currentMatch = this.tournamentStore.currentMatch;
+        const winner = isHomeWin ? currentMatch.home : currentMatch.away;
+
+        this.store.matchResult = {
+            ...this.store.matchResult,
+            scores,
+            miniGame,
+            penalty,
+            winner,
+            isHomeWin,
+            homeWinsOnDraw: !!matchResult.homeWinsOnDraw,
+            isFinal: this.tournamentStore.isFinal,
+        };
+    }
+
+    eventHandleList = [
+        {
+            name: "matchResult",
+            handle: this.handleMatchResult,
+        },
+    ];
 }
