@@ -6,7 +6,7 @@ include:
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
   GIT_STRATEGY: clone
-  COCOS_VERSION: "3.8.4"
+  COCOS_VERSION: "3.8.5"
   COCOS_PROJECT_DIR: src
   INTEGRATION_IMAGE: pentagon/l1_football_dice_client
   INTEGRATION_WS_PATH: footballdice
@@ -51,7 +51,7 @@ variables:
         exit 1
       fi
   tags:
-   - cocos-v3.8.4
+   - cocos-3.8.5
   artifacts:
     when: always
     paths:
