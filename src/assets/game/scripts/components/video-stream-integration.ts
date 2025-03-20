@@ -211,7 +211,7 @@ export default class VideoStreamIntegration extends ObserverComponent {
             return;
         }
 
-        sentryLogger.logError(JSON.stringify(data));
+        sentryLogger?.logError(JSON.stringify(data));
     }
 
     private onHSLNotSupported() {

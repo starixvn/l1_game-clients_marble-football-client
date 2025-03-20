@@ -118,7 +118,7 @@ export default class Game extends GameComponent {
 
         assetManager.loadRemote<ImageAsset>(imagePath, (err, imageAsset) => {
             if (err) {
-                sentryLogger.logError(`Failed to load image asset ${imagePath} with error ${err}`);
+                sentryLogger?.logError(`Failed to load image asset ${imagePath} with error ${err}`);
                 return;
             }
 
