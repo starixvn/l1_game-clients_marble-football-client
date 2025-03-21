@@ -287,6 +287,7 @@
     "__prefab": {
       "__id__": 9
     },
+    "bgNode": null,
     "_id": ""
   },
   {
@@ -441,7 +442,7 @@
         "__id__": 19
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 25
@@ -744,7 +745,9 @@
     "__prefab": {
       "__id__": 33
     },
-    "icon": null,
+    "liveNode": {
+      "__id__": 18
+    },
     "_id": ""
   },
   {
