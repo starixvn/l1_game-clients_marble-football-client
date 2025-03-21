@@ -351,7 +351,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "c91f76e7-44d1-4061-9094-1b1703d681d0@54dab",
+      "__uuid__": "c91f76e7-44d1-4061-9094-1b1703d681d0@48a02",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
@@ -451,6 +451,7 @@
       "__id__": 0
     },
     "fileId": "a5/K3855ZIhKeFPp9DqxIK",
+    "instance": null,
     "targetOverrides": []
   }
 ]
