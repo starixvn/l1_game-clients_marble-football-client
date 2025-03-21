@@ -68,7 +68,7 @@ export class PlayArea extends ObserverComponent {
             out: { positionY: -385, opacity: 0, time: 1 },
         },
         flyUp: {
-            in: { positionY: 330, opacity: 255, time: 0.5 },
+            in: { positionY: 303, opacity: 255, time: 0.5 },
             out: { positionY: 630, opacity: 0, time: 0.75 },
         },
     };

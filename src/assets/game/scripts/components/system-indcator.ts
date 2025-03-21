@@ -1,4 +1,4 @@
-import { _decorator, Component, Enum, sp } from "cc";
+import { _decorator, Component, Enum, sp, Node } from "cc";
 
 const { ccclass, property } = _decorator;
 
@@ -12,23 +12,14 @@ export enum NetworkStatus {
 export class SystemIndicator extends Component {
     private _networkStatus: NetworkStatus = NetworkStatus.GOOD;
 
-    @property(sp.Skeleton)
-    private icon: sp.Skeleton = null;
-
-    @property({ type: Enum(NetworkStatus) })
-    get networkStatus() {
-        return this._networkStatus;
-    }
+    @property(Node)
+    private liveNode: Node = null;
 
     set networkStatus(value: NetworkStatus) {
         this._networkStatus = value;
+    }
 
-        if (value === NetworkStatus.GOOD) {
-            this.icon.animation = "wifi green";
-        } else if (value === NetworkStatus.BAD) {
-            this.icon.animation = "wifi yellow";
-        } else {
-            this.icon.animation = "wifi red";
-        }
+    setLiveIndicatorVisibility(isLiveVideo: boolean) {
+        this.liveNode && (this.liveNode.active = isLiveVideo);
     }
 }

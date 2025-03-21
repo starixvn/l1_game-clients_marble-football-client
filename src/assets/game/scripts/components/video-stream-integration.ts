@@ -228,6 +228,7 @@ export default class VideoStreamIntegration extends ObserverComponent {
     @render(VideoStreamStore, (store) => store.isLiveVideo)
     private liveVideo(isLiveVideo: boolean) {
         this.isLiveVideo = isLiveVideo;
+        this.systemIndicator?.setLiveIndicatorVisibility(isLiveVideo);
         if (!isLiveVideo) {
             this.warnContainer?.removeAllChildren();
         }
