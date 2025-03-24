@@ -142,6 +142,7 @@ export default class Game extends GameComponent {
         settlementResult: gc.GameServiceMessage.TSettlementResult
     ) {
         try {
+            sentryLogger.logInfo("test showResult ======================");
             const matchResult = this.betResultNode.getComponentInChildren(MatchResult);
 
             if (hasAnimation) {
