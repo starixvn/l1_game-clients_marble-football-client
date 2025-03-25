@@ -15,7 +15,7 @@ import { GamePhaseStore } from "../features/game-phase/game-phase-store";
 import { settings } from "../game-settings";
 import { ChipFlying } from "./chip-flying";
 import { MatchResult } from "./match-result";
-import { NetworkStatus, SystemIndicator } from "./system-indcator";
+import { NetworkStatus, SystemIndicator } from "./system-indicator";
 
 startGame(settings.name, containerOptions, siteConfigs);
 

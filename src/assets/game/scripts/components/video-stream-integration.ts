@@ -12,7 +12,7 @@ import { settings } from "../game-settings";
 import { MarbleFootballServiceMessages } from "../marble-football-service-messages";
 import { BreakTime } from "./break-time";
 import { IntroOutro } from "./intro-outro";
-import { NetworkStatus, SystemIndicator } from "./system-indcator";
+import { NetworkStatus, SystemIndicator } from "./system-indicator";
 
 const { ccclass, property } = _decorator;
 const { render, handle } = Observer;
