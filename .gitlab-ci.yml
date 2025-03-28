@@ -59,7 +59,7 @@ variables:
       fi
 
   tags:
-   - cocos-new
+   - cocos-test
   artifacts:
     when: always
     paths:
