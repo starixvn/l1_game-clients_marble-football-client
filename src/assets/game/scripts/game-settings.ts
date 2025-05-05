@@ -1,6 +1,8 @@
+const GAME_NAME = "MarbleFootball";
 export const settings = {
     id: 104,
-    name: "MarbleFootball",
+    name: GAME_NAME,
+    observerNamespace: GAME_NAME,
     durations: {
         wholeRound: 151,
         placingBet: 136,
