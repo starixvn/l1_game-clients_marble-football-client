@@ -13,6 +13,7 @@ jest.mock("@sg/game-client-base", () => ({
     buildObserverContainer: jest.fn(() => ({ sharedContainer: true })),
 }));
 
+jest.mock("mobx", () => ({}));
 jest.mock("../../../assets/scripts/site-configs", () => ({ siteConfigs: { mockedConfig: true } }));
 
 describe("when imported", () => {

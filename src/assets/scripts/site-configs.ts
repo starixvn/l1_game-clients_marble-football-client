@@ -23,7 +23,6 @@ const defaultConfig: gc.Configs.SiteConfigs = {
         proxyPath: "marblefootball",
         route: "marblefootball",
     },
-    mainObserverNamespace: "MarbleFootball",
     tolgeeUrl: "",
     boostedOddsDelayTimeByMinutes: 1,
 };

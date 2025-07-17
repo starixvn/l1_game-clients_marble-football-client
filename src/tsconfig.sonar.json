@@ -5,9 +5,11 @@
         "resolveJsonModule": true,
         "types": ["node"],
         "paths": {
+            "db://assets/*": ["./assets/*"],
             "db://shared-components/*": ["./extensions/shared-components/assets/*"],
             "db://i18n/*": ["./extensions/i18n/assets/*"],
-            "sc-user-service-client/dist/*": ["./node_modules/sc-user-service-client/dist/*"]
+            "sc-user-service-client/dist/*": ["./node_modules/sc-user-service-client/dist/*"],
+            "socket.io-client/dist/*": ["./node_modules/socket.io-client/dist/*"]
         }
     }
 }
