@@ -146,7 +146,6 @@ export class PlayArea extends ObserverComponent {
         if (phase.id === this.ShowWinnerAndTournament) {
             const duration = 0.2;
             this.scheduleOnce(() => this.fadeOutBetchoiceNode(false, duration), this.ShowWinnerAndTournamentTimeOffset - duration);
-            return;
         }
     }
 

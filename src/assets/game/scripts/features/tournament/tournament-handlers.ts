@@ -6,7 +6,7 @@ const { injectable, inject } = inversify;
 
 @injectable()
 export class TournamentHandlers {
-    @inject(TournamentStore) private tournamentStore: TournamentStore;
+    @inject(TournamentStore) private readonly tournamentStore: TournamentStore;
 
     handleTournament(tournament: MarbleFootballServiceMessages.Tournament) {
         this.tournamentStore.tournament = tournament;

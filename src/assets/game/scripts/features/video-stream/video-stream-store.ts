@@ -61,7 +61,9 @@ export class VideoStreamStore {
         const currentVideoTime = this._currentVideoTime;
         const videoData = this.getVideoData();
 
-        if (!videoData) return;
+        if (!videoData) {
+            return;
+        }
 
         if (this._isFirstLoad) {
             const currentMatchTime = this.calculateCurrentMatchTime();
@@ -142,7 +144,9 @@ export class VideoStreamStore {
         const videoTimeline = isFirstHalf ? this._videoResult.firstHalfTimeline : this._videoResult.secondHalfTimeline;
         const videoResult = isFirstHalf ? this._videoResult.firstHalf : this._videoResult.secondHalf;
 
-        if (!videoName || !videoTimeline || !videoResult) return null;
+        if (!videoName || !videoTimeline || !videoResult) {
+            return null;
+        }
 
         return { videoName, videoTimeline, videoResult };
     }
@@ -180,12 +184,9 @@ export class VideoStreamStore {
 
         if (roundTime <= settings.durations.videoDuration && roundTime >= 0) {
             const secondHalfTime = settings.durations.videoDuration - roundTime;
-            const matchTime =
-                secondHalfTime < settings.durations.halfDuration
-                    ? secondHalfTime + settings.durations.halfDuration
-                    : settings.durations.halfDuration * 2;
-
-            return matchTime;
+            return secondHalfTime < settings.durations.halfDuration
+                ? secondHalfTime + settings.durations.halfDuration
+                : settings.durations.halfDuration * 2;
         }
 
         return 0;

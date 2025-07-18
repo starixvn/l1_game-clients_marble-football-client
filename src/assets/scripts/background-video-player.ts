@@ -9,9 +9,9 @@ export class BackgroundVideoPlayer extends Component {
     private hls: Hls = null;
     private native: HTMLVideoElement = null;
 
-    private _videoSource: string = "";
-    private _videoName: string = "";
-    private liveStreamServer: string = "";
+    private _videoSource = "";
+    private _videoName = "";
+    private liveStreamServer = "";
     private _muted = true;
 
     private get initialized() {

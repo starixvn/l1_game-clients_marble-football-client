@@ -95,10 +95,6 @@ export class MatchResultHandler {
         ];
 
         const halftimeScores = matchHalves.map((half) => {
-            // const scoreTimeline = {
-            //     H: [], // Home team goals
-            //     A: [], // Away team goals
-            // };
             const scores = {
                 H: 0,
                 A: 0,
@@ -110,10 +106,8 @@ export class MatchResultHandler {
                     continue;
                 }
                 scores[scoringTeam]++;
-                // scoreTimeline[scoringTeam].push(half.timeline[i]);
             }
             return [scores.H, scores.A];
-            // return [scoreTimeline.H.length, scoreTimeline.A.length];
         });
 
         const finalScore = halftimeScores.reduce((total, current) => [total[0] + current[0], total[1] + current[1]], [0, 0]);

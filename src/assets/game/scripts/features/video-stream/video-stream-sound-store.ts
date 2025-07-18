@@ -1,5 +1,4 @@
 import gc from "@sg/game-client-base";
-import { _decorator } from "cc";
 import inversify from "inversify";
 import mobx from "mobx";
 import { settings } from "../../game-settings";
@@ -8,8 +7,8 @@ const { injectable, inject } = inversify;
 
 @injectable()
 export class VideoStreamSoundStore {
-    @inject(gc.Rounds.RoundTimeStore) private roundTimeStore: gc.Rounds.RoundTimeStore;
-    @inject(gc.UserSettings.UserSettingStore) private userSettingStore: gc.UserSettings.UserSettingStore;
+    @inject(gc.Rounds.RoundTimeStore) private readonly roundTimeStore: gc.Rounds.RoundTimeStore;
+    @inject(gc.UserSettings.UserSettingStore) private readonly userSettingStore: gc.UserSettings.UserSettingStore;
 
     constructor() {
         mobx.makeAutoObservable(this);

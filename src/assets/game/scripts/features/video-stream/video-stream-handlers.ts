@@ -6,7 +6,7 @@ const { injectable, inject } = inversify;
 
 @injectable()
 export class VideoStreamHandlers {
-    @inject(VideoStreamStore) private videoStreamStore: VideoStreamStore;
+    @inject(VideoStreamStore) private readonly videoStreamStore: VideoStreamStore;
 
     handleVideoStream(videoResult: MarbleFootballServiceMessages.VideoStream) {
         this.videoStreamStore.videoResult = videoResult;

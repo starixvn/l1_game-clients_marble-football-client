@@ -18,17 +18,17 @@ export class TournamentStore {
         return this._tournament;
     }
 
+    set tournament(value: MarbleFootballServiceMessages.Tournament) {
+        this._tournament = value;
+        this._currentMatch = value.matches[value.currentMatch];
+        this._isFinal = value.currentMatch === value.matches.length - 1;
+    }
+
     get currentMatch() {
         return this._currentMatch;
     }
 
     get isFinal() {
         return this._isFinal;
-    }
-
-    set tournament(value: MarbleFootballServiceMessages.Tournament) {
-        this._tournament = value;
-        this._currentMatch = value.matches[value.currentMatch];
-        this._isFinal = value.currentMatch === value.matches.length - 1;
     }
 }

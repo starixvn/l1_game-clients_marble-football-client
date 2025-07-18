@@ -27,7 +27,7 @@ export class Winner extends Component {
     }
 
     protected onDisable(): void {
-        this.spine!.node.active = false;
+        this.spine.node.active = false;
     }
 
     private playAnimation(spine: sp.Skeleton, name: string, at = 0) {
