@@ -5,12 +5,12 @@ const { ccclass, property } = _decorator;
 @ccclass("IntroOutro")
 export class IntroOutro extends Component {
     @property(UIOpacity)
-    private gameBackground: UIOpacity = null;
+    private readonly gameBackground: UIOpacity = null;
 
     @property(UIOpacity)
-    private field: UIOpacity = null;
+    private readonly field: UIOpacity = null;
 
-    private maxOpacity = 255;
+    private readonly maxOpacity = 255;
 
     set showGameBackground(value: boolean) {
         this.gameBackground.node.active = value;

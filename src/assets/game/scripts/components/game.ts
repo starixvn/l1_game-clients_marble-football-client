@@ -39,10 +39,10 @@ export default class Game extends GameComponent {
     betResultNode: Node = null;
 
     @property(BackgroundVideoPlayer)
-    private backgroundVideoPlayer: BackgroundVideoPlayer = null;
+    private readonly backgroundVideoPlayer: BackgroundVideoPlayer = null;
 
     @property(Node)
-    private nodeSystemIndicator: Node = null;
+    private readonly nodeSystemIndicator: Node = null;
 
     private _systemIndicator: SystemIndicator = null;
 

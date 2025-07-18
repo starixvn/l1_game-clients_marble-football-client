@@ -10,9 +10,9 @@ export class BackgroundMusicPlayer extends MusicPlayer {
     @property(AudioSource)
     musicSource: AudioSource = null;
 
-    _stopBackgroundMusic: boolean = false;
+    _stopBackgroundMusic = false;
 
-    _currentVolume: number = 1;
+    _currentVolume = 1;
 
     onEnable() {
         this.musicSource.node.on(AudioSource.EventType.STARTED, this.onMusicStarted, this);

@@ -31,28 +31,28 @@ interface TweenConfigs {
 
 @ccclass("PlayArea")
 export class PlayArea extends ObserverComponent {
-    private isZoomOut: boolean = false;
-    private isScoreBoardOut: boolean = false;
+    private isZoomOut = false;
+    private isScoreBoardOut = false;
 
     private mainPlayAreaTargets: Array<{ target: Node; key: TweenKey }>;
 
     @property(Node)
-    private chipContainer: Node = null;
+    private readonly chipContainer: Node = null;
 
     @property(Node)
-    private betChoices: Node = null;
+    private readonly betChoices: Node = null;
 
     @property(Node)
-    private scoreBoard: Node = null;
+    private readonly scoreBoard: Node = null;
 
     @property(Node)
-    private chips: Node = null;
+    private readonly chips: Node = null;
 
     @property(Node)
-    private teamScore: Node = null;
+    private readonly teamScore: Node = null;
 
     @property([Node])
-    private disappearingNodes: Node[] = [];
+    private readonly disappearingNodes: Node[] = [];
 
     private readonly tweenConfigs: Record<TweenKey, TweenConfigs> = {
         zoomInOut: {
@@ -127,8 +127,6 @@ export class PlayArea extends ObserverComponent {
             } else {
                 this.fadeOutBetchoiceNode(true, 0);
             }
-
-            return;
         }
 
         if (phase.id === this.ShowLiveScore) {
@@ -137,7 +135,6 @@ export class PlayArea extends ObserverComponent {
             } else {
                 this.setStaticTarget(this.teamScore, this.tweenConfigs.flyUp.in);
             }
-            return;
         }
     }
 

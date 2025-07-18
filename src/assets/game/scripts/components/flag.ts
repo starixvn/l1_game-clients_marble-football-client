@@ -5,7 +5,7 @@ const { ccclass, property } = _decorator;
 @ccclass("Flag")
 export class Flag extends Component {
     @property(Sprite)
-    private icon: Sprite = null;
+    private readonly icon: Sprite = null;
 
     setIcon(icon: string) {
         const atlas = this.icon.spriteAtlas;

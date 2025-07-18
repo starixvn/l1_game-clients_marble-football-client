@@ -1,4 +1,4 @@
-import { _decorator, Component, Label, Node } from "cc";
+import { _decorator, Component, Label } from "cc";
 import gc from "@sg/game-client-base";
 const { ccclass, property } = _decorator;
 

@@ -10,10 +10,10 @@ const { render } = observer;
 @ccclass("PopupFooter")
 export class PopupFooter extends ObserverComponent {
     @property
-    private index = 0;
+    private readonly index = 0;
 
     @property(Label)
-    private timer: Label = null;
+    private readonly timer: Label = null;
 
     @render(RoundTimeStore, (store) => store.roundTime - settings.durations.placingBet)
     updateTimer(time: number) {

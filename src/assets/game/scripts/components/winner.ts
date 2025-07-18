@@ -7,7 +7,7 @@ const { ccclass, property } = _decorator;
 @ccclass("Winner")
 export class Winner extends Component {
     @property(sp.Skeleton)
-    private spine: sp.Skeleton = null;
+    private readonly spine: sp.Skeleton = null;
 
     showWinner(at = 0, winnerName: string, isHomeWin: boolean, isFinal: boolean) {
         const animationType = isFinal ? "champion" : "winner";
@@ -23,7 +23,7 @@ export class Winner extends Component {
     }
 
     protected onLoad(): void {
-        this.spine!.node.active = false;
+        this.spine.node.active = false;
     }
 
     protected onDisable(): void {

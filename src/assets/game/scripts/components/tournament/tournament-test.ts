@@ -2,8 +2,8 @@ import { _decorator, Component, Label } from "cc";
 import { Tournament } from "./tournament";
 const { ccclass, property } = _decorator;
 
-@ccclass("tournament_test")
-export class tournament_test extends Component {
+@ccclass("TournamentTest")
+export class TournamentTest extends Component {
     @property(Label)
     label: Label = null;
 

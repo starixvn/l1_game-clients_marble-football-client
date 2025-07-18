@@ -9,9 +9,9 @@ const { handle, useObserver } = Observer;
 @ccclass("ScoreboardManager")
 export class ScoreboardManager extends Component {
     @property([Node])
-    private boards: Node[] = [];
+    private readonly boards: Node[] = [];
 
-    private boardIndex: number = 0;
+    private boardIndex = 0;
 
     private dispose: Function;
 

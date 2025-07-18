@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, tween } from "cc";
+import { _decorator, tween } from "cc";
 import gc from "@sg/game-client-base";
 import { ActionChipFlying } from "db://shared-components/game/chip-flying/scripts/components/actions";
 import { ChipFlying as ChipFlyingShared, IChipFlyingInfo } from "db://shared-components/game/chip-flying/scripts/components/chip-flying";
