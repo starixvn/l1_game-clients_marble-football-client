@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@sg/cocos-integration-testing": "1.6.2",
-    "@sg/game-client-base": "^1.61.1-beta.5",
+    "@sg/game-client-base": "^1.61.1-beta.7",
     "file-saver": "^2.0.5",
     "hls.js": "1.5.17",
     "inversify": "6.0.1",
